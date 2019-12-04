@@ -25,33 +25,47 @@ namespace LancioDado
             InitializeComponent();
         }
 
+        Random random = new Random();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            double a = double.Parse(txtNumero.Text);
-            if (a > 6 || a < 1)
+            int da = 1;
+            int a = 6;
+            int NumeroCasuale = random.Next(da, a);
+            int crediti = int.Parse(TxtCrediti.Text);
+            if (crediti <= 0)
             {
-                MessageBox.Show("Il numero non è corretto", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
-                txtNumero.Clear();
+                MessageBox.Show("Inserisci numero crediti positivo");
             }
-            else
+            try
             {
-                Random r = new Random();
-                int b = r.Next(1, 6);
-                if (a == b)
+                int n = int.Parse(txtDado.Text);
+                if (n>= 7 || n <= 0)
                 {
-                    txtResult.Text = string.Format($"Il numero uscito è {b} Hai vinto!!");
+                    MessageBox.Show("Lancia il dado! Inserisci un numero da 1 a 6");
                 }
-                else
-                    txtResult.Text = string.Format($"Il numero uscito è {b} Hai perso! Riprova");
-                a = 0;
-                b = 0;
+                else if(NumeroCasuale == n)
+                {
+                    txtResult.Text = ($"Il numero uscito è {NumeroCasuale}.Hai vinto!");
+                    crediti = crediti * 2;
+                    TxtCrediti.Text = ($"{ crediti}");
+                }else if (NumeroCasuale != n)
+                {
+                    txtResult.Text = ($"Il numero uscito è {NumeroCasuale}.Hai perso");
+                    crediti= crediti - crediti;
+                    TxtCrediti.Text = ($"{ crediti}");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Il numero uscito è{NumeroCasuale}");
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            txtNumero.Clear();
+            txtDado.Clear();
             txtResult.Clear();
+            TxtCrediti.Clear();
         }
     }
 }
