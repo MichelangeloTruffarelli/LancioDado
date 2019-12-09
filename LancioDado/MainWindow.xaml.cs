@@ -32,6 +32,7 @@ namespace LancioDado
             int a = 6;
             int NumeroCasuale = random.Next(da, a);
             int crediti = int.Parse(TxtCrediti.Text);
+            int puntata = int.Parse(txtPuntata.Text);
             if (crediti <= 0)
             {
                 MessageBox.Show("Inserisci numero crediti positivo");
@@ -51,8 +52,9 @@ namespace LancioDado
                 }else if (NumeroCasuale != n)
                 {
                     txtResult.Text = ($"Il numero uscito è {NumeroCasuale}.Hai perso");
-                    crediti= crediti - crediti;
+                    crediti= crediti - puntata;
                     TxtCrediti.Text = ($"{ crediti}");
+                    dado.Source = new BitmapImage(new Uri($@"Dadi/dado{NumeroCasuale}.png", UriKind.Relative));
                 }
             }
             catch (Exception)
@@ -65,7 +67,8 @@ namespace LancioDado
         {
             txtDado.Clear();
             txtResult.Clear();
-            TxtCrediti.Clear();
+            txtPuntata.Clear();
+            dado.Source = null;
         }
     }
 }

@@ -94,5 +94,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dadi\Dado1.png" />
+    <Resource Include="Dadi\Dado2.png" />
+    <Resource Include="Dadi\Dado3.png" />
+    <Resource Include="Dadi\Dado4.png" />
+    <Resource Include="Dadi\Dado5.png" />
+    <Resource Include="Dadi\Dado6.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

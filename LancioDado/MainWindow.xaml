@@ -21,7 +21,7 @@
         <Label Content="I tuoi crediti totali" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,41,0,0" Background="#FF00FFF3" FontWeight="Bold" Width="115"/>
         <TextBox x:Name="TxtCrediti" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="50" VerticalAlignment="Top" Width="88" IsReadOnly="True" Margin="585,87,0,0"/>
         <Label Content="La tua puntata" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,41,0,0" FontWeight="Bold" Background="#FF00FFF3" Width="105"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="350,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="605,200,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="txtPuntata" HorizontalAlignment="Left" Height="23" Margin="350,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
+        <Image Name="dado" HorizontalAlignment="Left" Height="100" Margin="360,155,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
